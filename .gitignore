@@ -1,41 +1,20 @@
-# Compiled Lua sources
-luac.out
+# Godot 4.2+ specific ignores
+~*.dll
 
-# luarocks build files
-*.src.rock
-*.zip
-*.tar.gz
+# Godot 4+ specific ignores
+.godot/
+.nomedia
 
-# Object files
-*.o
-*.os
-*.ko
-*.obj
-*.elf
+# Godot-specific ignores
+.import/
+export.cfg
+export_credentials.cfg
+*.tmp
 
-# Precompiled Headers
-*.gch
-*.pch
+# Imported translations (automatically generated from CSV files)
+*.translation
 
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
-*.def
-*.exp
-
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
-
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
-
+# Mono-specific ignores
+.mono/
+data_*/
+mono_crash.*.json
