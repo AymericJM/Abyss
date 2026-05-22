@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://8etoonjjrxec"]
+
+[ext_resource type="Script" uid="uid://c7r0ixumpgidj" path="res://scripts/level.gd" id="1_2q6dc"]
+[ext_resource type="Texture2D" uid="uid://ccxdire01hwq7" path="res://assets/background.png" id="2_w7c3h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rd3vj"]
+size = Vector2(637.7, 49)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2q6dc"]
+size = Vector2(555.0001, 269.50006)
+
+[node name="Level" type="Node2D" unique_id=1771754707]
+script = ExtResource("1_2q6dc")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1825252279]
+position = Vector2(319.60004, 179.40001)
+scale = Vector2(2.2111108, 1.3953123)
+texture = ExtResource("2_w7c3h")
+
+[node name="DownDetector" type="Area2D" parent="." unique_id=372992916]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DownDetector" unique_id=917775570]
+position = Vector2(320.15, 334)
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("RectangleShape2D_rd3vj")
+
+[node name="RoomCenter" type="Area2D" parent="." unique_id=1581014805]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomCenter" unique_id=136073651]
+position = Vector2(322, 157)
+scale = Vector2(0.99999976, 0.99999976)
+shape = SubResource("RectangleShape2D_2q6dc")
+
+[connection signal="body_entered" from="RoomCenter" to="." method="_on_room_center_body_entered"]
