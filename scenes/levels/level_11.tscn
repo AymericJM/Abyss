@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://8etoonjjrxec"]
+
+[ext_resource type="Script" uid="uid://c7r0ixumpgidj" path="res://scripts/level.gd" id="1_2q6dc"]
+[ext_resource type="Texture2D" uid="uid://ccxdire01hwq7" path="res://assets/background.png" id="2_w7c3h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2q6dc"]
+size = Vector2(577.0001, 335.0001)
+
+[node name="Level" type="Node2D" unique_id=1771754707]
+script = ExtResource("1_2q6dc")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1825252279]
+position = Vector2(319.99997, 180.00002)
+scale = Vector2(2.222222, 1.40625)
+texture = ExtResource("2_w7c3h")
+
+[node name="RoomCenter" type="Area2D" parent="." unique_id=1581014805]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomCenter" unique_id=136073651]
+position = Vector2(319.49997, 179.5)
+scale = Vector2(0.99999976, 0.99999976)
+shape = SubResource("RectangleShape2D_2q6dc")
+
+[connection signal="body_entered" from="RoomCenter" to="." method="_on_room_center_body_entered"]

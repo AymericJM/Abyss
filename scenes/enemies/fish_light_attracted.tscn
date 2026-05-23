@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://b5tllwld7rudv"]
+
+[ext_resource type="Script" uid="uid://b1o5ly2f47ck0" path="res://scripts/enemies/fish_light_attracted.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://b185xvia488f1" path="res://assets/ennemies/fish-big.png" id="2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fo2sl"]
+atlas = ExtResource("2")
+region = Rect2(0, 0, 54, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_euh3w"]
+atlas = ExtResource("2")
+region = Rect2(54, 0, 54, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8m8ib"]
+atlas = ExtResource("2")
+region = Rect2(108, 0, 54, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iih5k"]
+atlas = ExtResource("2")
+region = Rect2(162, 0, 54, 49)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fo2sl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_euh3w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8m8ib")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iih5k")
+}],
+"loop": true,
+"name": &"swim",
+"speed": 6.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1"]
+radius = 14.0
+
+[node name="FishLightAttracted" type="CharacterBody2D" unique_id=1557373553 groups=["enemy"]]
+script = ExtResource("1")
+speed = 60.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1466401423]
+sprite_frames = SubResource("SpriteFrames_1")
+animation = &"swim"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=411823402]
+shape = SubResource("CircleShape2D_1")
