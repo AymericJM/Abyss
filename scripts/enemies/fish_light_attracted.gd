@@ -49,7 +49,6 @@ func randomize_idle_direction():
 
 func rush_player():
 	var direction = (player.global_position - global_position).normalized()
-
 	velocity = direction * rush_speed
 	move_and_slide()
 	rotation = direction.angle()

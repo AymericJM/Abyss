@@ -1,12 +1,10 @@
 extends Node2D
 
-var room_debug: Label
 var is_restarting = false
 var death_overlay: ColorRect
 
 func _ready():
 	create_death_overlay()
-	create_room_debug()
 	$Music.play()
 	assign_floor_depths()
 
@@ -44,30 +42,8 @@ func player_die():
 	await tween.finished
 
 	get_tree().paused = false
+	BatteryManager.reset()
 	get_tree().reload_current_scene()
-
-func create_room_debug():
-	var canvas = get_node_or_null("CanvasLayer")
-
-	if canvas == null:
-		canvas = CanvasLayer.new()
-		canvas.name = "CanvasLayer"
-		add_child(canvas)
-
-	room_debug = canvas.get_node_or_null("RoomDebug")
-
-	if room_debug == null:
-		room_debug = Label.new()
-		room_debug.name = "RoomDebug"
-		room_debug.position = Vector2(10, 10)
-		room_debug.text = "ROOM ?"
-		canvas.add_child(room_debug)
-
-func update_room_debug(room_index):
-	if room_debug == null:
-		create_room_debug()
-
-	room_debug.text = "ROOM " + str(room_index)
 
 func assign_floor_depths():
 	var floor_mapping = {

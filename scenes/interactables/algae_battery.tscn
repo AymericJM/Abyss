@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://tqagiaqequu3"]
+
+[ext_resource type="Script" uid="uid://btxpxn1hnv672" path="res://scripts/algae_battery.gd" id="1_6v5ny"]
+[ext_resource type="Texture2D" uid="uid://ps3vyn5i36e7" path="res://assets/alguae.png" id="2_g5ots"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vsl0k"]
+atlas = ExtResource("2_g5ots")
+region = Rect2(0, 0, 205, 244)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u1s7n"]
+atlas = ExtResource("2_g5ots")
+region = Rect2(205, 0, 205, 244)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t6pab"]
+atlas = ExtResource("2_g5ots")
+region = Rect2(410, 0, 205, 244)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nelxh"]
+atlas = ExtResource("2_g5ots")
+region = Rect2(615, 0, 205, 244)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_88va3"]
+atlas = ExtResource("2_g5ots")
+region = Rect2(820, 0, 205, 244)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5rvf5"]
+atlas = ExtResource("2_g5ots")
+region = Rect2(1025, 0, 205, 244)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f8ty5"]
+atlas = ExtResource("2_g5ots")
+region = Rect2(1230, 0, 205, 244)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_louwq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vsl0k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u1s7n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t6pab")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nelxh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_88va3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5rvf5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f8ty5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6v5ny"]
+radius = 14.0
+
+[node name="AlgaeBattery" type="Node2D" unique_id=195108152]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1598221984]
+script = ExtResource("1_6v5ny")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D" unique_id=524185900]
+sprite_frames = SubResource("SpriteFrames_louwq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1474799041]
+shape = SubResource("CircleShape2D_6v5ny")

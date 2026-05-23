@@ -8,17 +8,14 @@ func apply_darkness():
 		$DarknessOverlay.queue_free()
 
 	var overlay = ColorRect.new()
-
 	overlay.name = "DarknessOverlay"
 	overlay.color = Color(0, 0, 0, 0)
 	overlay.mouse_filter = Control.MOUSE_FILTER_IGNORE
-
 	overlay.size = Vector2(640, 360)
 	overlay.position = Vector2(0, 0)
 
 	var alpha = floor_depth * 0.20
 	alpha = min(alpha, 0.9)
-
 	overlay.color.a = alpha
 
 	add_child(overlay)
@@ -27,7 +24,7 @@ func _on_room_center_body_entered(body: Node2D) -> void:
 	if body is Player:
 		Events.room_entered.emit(self)
 
-		var game = get_tree().current_scene
-
-		if game.has_method("update_room_debug"):
-			game.update_room_debug(room_index)
+		if room_index == 16:
+			Events.penultimate_room_entered.emit()
+		elif room_index == 17:
+			Events.final_room_entered.emit()
