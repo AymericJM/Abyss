@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcwgko7jka6ln"
-path="res://.godot/imported/battery_empty.png-2dc2908a2c8713b863d38fa76fb1f685.ctex"
+uid="uid://cqe7x8fv1yelm"
+path="res://.godot/imported/speed_energy_in_use_3.png-67abf7a1a304a2723f3b571b8042160c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://battery_empty.png"
-dest_files=["res://.godot/imported/battery_empty.png-2dc2908a2c8713b863d38fa76fb1f685.ctex"]
+source_file="res://assets/flashlight/speed_energy_in_use_3.png"
+dest_files=["res://.godot/imported/speed_energy_in_use_3.png-67abf7a1a304a2723f3b571b8042160c.ctex"]
 
 [params]
 

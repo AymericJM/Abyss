@@ -9,15 +9,15 @@
 [ext_resource type="PackedScene" uid="uid://8etoonjjrxec" path="res://scenes/level.tscn" id="3_lnu2h"]
 [ext_resource type="Script" uid="uid://2spwkrcku5c7" path="res://scripts/music.gd" id="4_efpq0"]
 [ext_resource type="AudioStream" uid="uid://cfy18bef6vecr" path="res://assets/audio/music_deep.mp3" id="4_gee14"]
-[ext_resource type="Texture2D" uid="uid://gbxl6a2mqvcm" path="res://assets/speed_energy_in_use_2.png" id="4_p57ef"]
-[ext_resource type="Script" uid="uid://djgna5qysgnir" path="res://scenes/battery_ui.gd" id="4_u5sy4"]
-[ext_resource type="Texture2D" uid="uid://cr4lbyt4a4uik" path="res://assets/battery_empty.png" id="5_p57ef"]
-[ext_resource type="Texture2D" uid="uid://d22snbgn7e6l1" path="res://assets/speed_energy_in_use_0.png" id="5_u5sy4"]
-[ext_resource type="Texture2D" uid="uid://kqmndln32dkm" path="res://assets/speed_energy_in_use_5.png" id="6_gee14"]
-[ext_resource type="Texture2D" uid="uid://bffgxqdqqlcf4" path="res://assets/speed_energy_in_use_4.png" id="6_kvpfn"]
-[ext_resource type="Texture2D" uid="uid://4i3hgrq8byrj" path="res://assets/speed_energy_in_use_3.png" id="7_dinhu"]
-[ext_resource type="Texture2D" uid="uid://b7xev7neti62s" path="res://assets/speed_energy_in_use_1.png" id="9_kvuet"]
-[ext_resource type="Texture2D" uid="uid://c73slv4l3d2wh" path="res://assets/flashlight_uid.png" id="12_dinhu"]
+[ext_resource type="Texture2D" uid="uid://dxbbgojkhmcrj" path="res://assets/flashlight/speed_energy_in_use_2.png" id="4_p57ef"]
+[ext_resource type="Script" uid="uid://djgna5qysgnir" path="res://scripts/battery_ui.gd" id="4_u5sy4"]
+[ext_resource type="Texture2D" uid="uid://bcwgko7jka6ln" path="res://assets/flashlight/battery_empty.png" id="5_p57ef"]
+[ext_resource type="Texture2D" uid="uid://b3pfguysf44s8" path="res://assets/flashlight/speed_energy_in_use_0.png" id="5_u5sy4"]
+[ext_resource type="Texture2D" uid="uid://b5f0be5i8i23a" path="res://assets/flashlight/speed_energy_in_use_5.png" id="6_gee14"]
+[ext_resource type="Texture2D" uid="uid://b1n8ipldkun3v" path="res://assets/flashlight/speed_energy_in_use_4.png" id="6_kvpfn"]
+[ext_resource type="Texture2D" uid="uid://cqe7x8fv1yelm" path="res://assets/flashlight/speed_energy_in_use_3.png" id="7_dinhu"]
+[ext_resource type="Texture2D" uid="uid://vmm2o60n8yuu" path="res://assets/flashlight/speed_energy_in_use_1.png" id="9_kvuet"]
+[ext_resource type="Texture2D" uid="uid://c73slv4l3d2wh" path="res://assets/flashlight/flashlight_uid.png" id="12_dinhu"]
 
 [sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_music"]
 stream_count = 3
@@ -116,27 +116,26 @@ position_smoothing_speed = 7.0
 script = ExtResource("2_yqjtg")
 
 [node name="Level0" parent="." unique_id=1771754707 instance=ExtResource("3_lnu2h")]
-position = Vector2(0, -356)
+position = Vector2(0, -360)
 
 [node name="Sprite2D2" type="Sprite2D" parent="Level0" unique_id=1441491743]
-position = Vector2(320, 178.5)
-scale = Vector2(1.1111112, 1.095679)
+position = Vector2(320, 180)
+scale = Vector2(1.1111112, 1.109568)
 texture = ExtResource("3_lbhrr")
 
 [node name="Level1" parent="." unique_id=882372607 instance=ExtResource("3_lnu2h")]
-position = Vector2(0, 3)
 
 [node name="Level2" parent="." unique_id=1381282914 instance=ExtResource("3_lnu2h")]
-position = Vector2(-1279, 359)
+position = Vector2(-1279, 360)
 
 [node name="Level3" parent="." unique_id=927367562 instance=ExtResource("3_lnu2h")]
-position = Vector2(-639, 359)
+position = Vector2(-640, 360)
 
 [node name="Level4" parent="." unique_id=11225025 instance=ExtResource("3_lnu2h")]
 position = Vector2(0, 360)
 
 [node name="Level5" parent="." unique_id=1798858157 instance=ExtResource("3_lnu2h")]
-position = Vector2(638, 360)
+position = Vector2(640, 360)
 
 [node name="Level6" parent="." unique_id=653768208 instance=ExtResource("3_lnu2h")]
 position = Vector2(-640, 719)
@@ -175,7 +174,7 @@ position = Vector2(-5, 2159)
 position = Vector2(-5, 2518)
 
 [node name="Player" parent="." unique_id=1714594108 instance=ExtResource("1_uwrxv")]
-position = Vector2(331, -164)
+position = Vector2(322, -143)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=495194698]
 color = Color(0.19804764, 0.3237002, 0.41966823, 1)
