@@ -214,7 +214,7 @@ radius = 49.979996
 radius = 42.994873
 height = 300.22968
 
-[node name="game" type="Node2D" unique_id=977194021 groups=["enemy", "player"]]
+[node name="game" type="Node2D" unique_id=977194021]
 script = ExtResource("1_iywne")
 
 [node name="Music" type="AudioStreamPlayer" parent="." unique_id=434094903 node_paths=PackedStringArray("player")]
@@ -644,4 +644,3 @@ position = Vector2(547, 2500)
 rotation = 1.5752041
 shape = SubResource("CapsuleShape2D_gxtfn")
 
-[node name="DEBUG" type="CanvasLayer" parent="." unique_id=729668495]
