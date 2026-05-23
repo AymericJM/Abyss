@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://c73slv4l3d2wh" path="res://assets/flashlight/flashlight_uid.png" id="12_dinhu"]
 [ext_resource type="Texture2D" uid="uid://cnf3y62spaf3l" path="res://assets/grain.jpg" id="22_bt5mj"]
 [ext_resource type="Script" uid="uid://w0moih1y8t60" path="res://scripts/grain.gd" id="23_e1j6l"]
+[ext_resource type="AudioStream" uid="uid://dwdgk5u81iucn" path="res://assets/audio/tension.mp3" id="24_e1j6l"]
 
 [sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_music"]
 stream_count = 3
@@ -421,10 +422,15 @@ scale = Vector2(0.1635184, 0.1635184)
 texture = ExtResource("12_dinhu")
 
 [node name="GrainOverlay" type="TextureRect" parent="CanvasLayer" unique_id=1582443722]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 1.0
+offset_top = -359.0
+offset_right = 641.0
 texture = ExtResource("22_bt5mj")
+expand_mode = 1
 script = ExtResource("23_e1j6l")
+
+[node name="Tension" type="AudioStreamPlayer" parent="CanvasLayer/GrainOverlay" unique_id=1835500261]
+stream = ExtResource("24_e1j6l")
 
 [node name="Walls" type="StaticBody2D" parent="." unique_id=1199168450]
 
