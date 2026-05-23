@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Abyss"
-run/main_scene="uid://b8gy08ghdlbbe"
+run/main_scene="res://scenes/game.tscn"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="uid://c1avey3y61qcm"
 
