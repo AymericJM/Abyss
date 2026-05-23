@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://buwc80q5c7ixc"
-path="res://.godot/imported/raylight.png-9ad8779d3733f25ac8aa7afc6639547d.ctex"
+path="res://.godot/imported/raylight.png-1aa71ce6173d659f02d633cdbfba8eb8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/raylight.png"
-dest_files=["res://.godot/imported/raylight.png-9ad8779d3733f25ac8aa7afc6639547d.ctex"]
+source_file="res://assets/flashlight/raylight.png"
+dest_files=["res://.godot/imported/raylight.png-1aa71ce6173d659f02d633cdbfba8eb8.ctex"]
 
 [params]
 
