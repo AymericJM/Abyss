@@ -2,9 +2,6 @@ extends Node2D
 
 @export var floor_depth: int = 0
 
-func _ready():
-	print("Level ready - Depth: ", floor_depth, " Name: ", name)
-
 func apply_darkness():
 	if has_node("DarknessOverlay"):
 		$DarknessOverlay.queue_free()
@@ -23,7 +20,5 @@ func apply_darkness():
 	
 	add_child(overlay)
 	
-	print("Applied darkness overlay with alpha: ", alpha, " to ", name)
-
 func _on_room_center_body_entered(body: Node2D) -> void:
 	Events.room_entered.emit(self)

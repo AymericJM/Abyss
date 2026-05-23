@@ -2,7 +2,6 @@ extends Node2D
 	
 func _ready():
 	$Music.play()
-	print("Game ready - Assigning floor depths...")
 	assign_floor_depths()
 
 func assign_floor_depths():
@@ -32,6 +31,3 @@ func assign_floor_depths():
 		if level:
 			level.floor_depth = floor_mapping[level_name]
 			level.apply_darkness()
-			print("Assigned ", level_name, " depth: ", floor_mapping[level_name])
-		else:
-			print("WARNING: Level not found: ", level_name)
