@@ -3,6 +3,9 @@ extends CharacterBody2D
 var max_speed = 100
 var last_direction := Vector2(1, 0)
 
+func _ready() -> void:
+	play_swim_animation(last_direction)
+
 func _physics_process(delta):
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	velocity = direction * max_speed
