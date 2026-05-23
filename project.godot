@@ -33,6 +33,11 @@ window/stretch/scale_mode="integer"
 
 version_control/autoload_on_startup=true
 
+[global_group]
+
+player=""
+enemy=""
+
 [input]
 
 move_up={
