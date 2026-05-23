@@ -1,30 +1,32 @@
 extends AudioStreamPlayer
 
-const PLAYER_MIN_Y: float = 0
-const PLAYER_MAX_Y: float = 360
-const ZERO_VOLUME: int = -40
-
 @export var player: CharacterBody2D
-@export var transition: float
+@export var full_volumes: Array[float] = [-25.0, -30.0, -10.0]
 
-var ymin: float
-var ymax: float
+const ZERO_VOLUME: float = -60.0
+const FADE_HALF_WIDTH: float = 180.0
 
-func _ready() -> void:
-	set_transition(3)
-	
-func set_transition(value: float):
-	transition = value
-	compute_x_bounds()
-	
-func compute_x_bounds():
-	var d = PLAYER_MAX_Y - PLAYER_MIN_Y
-	ymin = PLAYER_MAX_Y + (d - d * transition) / 2.0
-	ymax = PLAYER_MIN_Y + (d + d * transition) / 2.0
+var transition_points: Array[float] = [1080.0, 1800.0]
 
-func _process(_delta: float):
-	var py = player.global_position.y
-	var r = inverse_lerp(ymin, ymax, py)
-	
-	stream.set_sync_stream_volume(1, min(ZERO_VOLUME + r * (-ZERO_VOLUME), 0.00))
-	stream.set_sync_stream_volume(0, min(ZERO_VOLUME + (1.0 - r) * (-ZERO_VOLUME), 0.00))
+func _process(_delta: float) -> void:
+	var py := player.global_position.y
+	for i in range(transition_points.size() + 1):
+		stream.set_sync_stream_volume(i, _track_volume(py, i))
+
+func _track_volume(py: float, i: int) -> float:
+	var left       := transition_points[i - 1] - FADE_HALF_WIDTH if i > 0 else -INF
+	var peak_start := transition_points[i - 1] + FADE_HALF_WIDTH if i > 0 else -INF
+	var peak_end   := transition_points[i] - FADE_HALF_WIDTH if i < transition_points.size() else INF
+	var right      := transition_points[i] + FADE_HALF_WIDTH if i < transition_points.size() else INF
+	var w: float
+
+	if py <= left or py >= right:
+		w = 0.0
+	elif py >= peak_start and py <= peak_end:
+		w = 1.0
+	elif py < peak_start:
+		w = inverse_lerp(left, peak_start, py)
+	else:
+		w = 1.0 - inverse_lerp(peak_end, right, py)
+
+	return lerp(ZERO_VOLUME, full_volumes[i], w)

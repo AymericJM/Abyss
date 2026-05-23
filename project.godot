@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="Abyss"
-run/main_scene="uid://8c18747kgxds"
+run/main_scene="uid://b6brkixw5apst"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="uid://c1avey3y61qcm"
 
 [autoload]
 
 Events="*uid://compfjwmrd2vs"
+BatteryManager="*uid://dcglow66qoity"
 
 [display]
 
@@ -27,6 +28,10 @@ window/size/window_width_override=1280
 window/size/window_height_override=720
 window/stretch/mode="canvas_items"
 window/stretch/scale_mode="integer"
+
+[editor]
+
+version_control/autoload_on_startup=true
 
 [input]
 

@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var max_speed = 100
+var max_speed = 200
 var last_direction := Vector2(1, 0)
 
 func _ready() -> void:
