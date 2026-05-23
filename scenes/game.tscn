@@ -1,9 +1,9 @@
-[gd_scene format=3 uid="uid://8c18747kgxds"]
+[gd_scene format=3 uid="uid://b6brkixw5apst"]
 
-[ext_resource type="Script" uid="uid://bng1x68xv3kpw" path="res://scripts/game.gd" id="1_tbuau"]
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_tbuau"]
 [ext_resource type="AudioStream" uid="uid://bxhlg2ac6lwxf" path="res://assets/audio/music_surface.mp3" id="2_i6t6v"]
 [ext_resource type="AudioStream" uid="uid://bdvsc7qo4pjh4" path="res://assets/audio/music_underwater.mp3" id="3_2dyrp"]
-[ext_resource type="Script" uid="uid://2spwkrcku5c7" path="res://scripts/music.gd" id="4_efpq0"]
+[ext_resource type="Script" path="res://scripts/music.gd" id="4_efpq0"]
 [ext_resource type="Script" uid="uid://drrdlk5lce5aj" path="res://scripts/camera.gd" id="5_8lmkp"]
 [ext_resource type="PackedScene" uid="uid://8etoonjjrxec" path="res://scenes/level.tscn" id="6_jmf2r"]
 [ext_resource type="PackedScene" uid="uid://xwcakq0n3tcq" path="res://scenes/player.tscn" id="7_pdte6"]
@@ -38,4 +38,4 @@ position = Vector2(0, 360)
 position = Vector2(0, 720)
 
 [node name="Player" parent="." unique_id=1714594108 instance=ExtResource("7_pdte6")]
-position = Vector2(519, 288)
+position = Vector2(147, 108)
