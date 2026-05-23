@@ -1,8 +1,51 @@
-[gd_scene format=3 uid="res://scenes/game.tscn"]
+[gd_scene format=3 uid="uid://cram3ui07hec7"]
 
 [ext_resource type="PackedScene" uid="uid://xwcakq0n3tcq" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="Script" uid="uid://drrdlk5lce5aj" path="res://scripts/camera.gd" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://8etoonjjrxec" path="res://scenes/level.tscn" id="3_lnu2h"]
+[ext_resource type="Texture2D" uid="uid://gbxl6a2mqvcm" path="res://assets/speed_energy_in_use_2.png" id="4_p57ef"]
+[ext_resource type="Script" uid="uid://djgna5qysgnir" path="res://scenes/battery_ui.gd" id="4_u5sy4"]
+[ext_resource type="Texture2D" uid="uid://cr4lbyt4a4uik" path="res://assets/battery_empty.png" id="5_p57ef"]
+[ext_resource type="Texture2D" uid="uid://d22snbgn7e6l1" path="res://assets/speed_energy_in_use_0.png" id="5_u5sy4"]
+[ext_resource type="Texture2D" uid="uid://kqmndln32dkm" path="res://assets/speed_energy_in_use_5.png" id="6_gee14"]
+[ext_resource type="Texture2D" uid="uid://bffgxqdqqlcf4" path="res://assets/speed_energy_in_use_4.png" id="6_kvpfn"]
+[ext_resource type="Texture2D" uid="uid://4i3hgrq8byrj" path="res://assets/speed_energy_in_use_3.png" id="7_dinhu"]
+[ext_resource type="Texture2D" uid="uid://b7xev7neti62s" path="res://assets/speed_energy_in_use_1.png" id="9_kvuet"]
+[ext_resource type="Texture2D" uid="uid://c73slv4l3d2wh" path="res://assets/flashlight_uid.png" id="12_dinhu"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_trtic"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_gee14")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_kvpfn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_dinhu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_p57ef")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_kvuet")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_u5sy4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_p57ef")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
 
 [node name="game" type="Node2D" unique_id=977194021]
 
@@ -13,7 +56,7 @@ position_smoothing_speed = 7.0
 script = ExtResource("2_yqjtg")
 
 [node name="Level" parent="." unique_id=1771754707 instance=ExtResource("3_lnu2h")]
-position = Vector2(-47, 0)
+position = Vector2(2, 0)
 
 [node name="Level2" parent="." unique_id=11225025 instance=ExtResource("3_lnu2h")]
 position = Vector2(0, 360)
@@ -25,4 +68,25 @@ position = Vector2(640, 0)
 position = Vector2(519, 288)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=495194698]
-color = Color(0.08, 0.08, 0.08, 1)
+color = Color(0.03137255, 0.07450981, 0.10980392, 1)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2090077843]
+
+[node name="BatteryHUD" type="Control" parent="CanvasLayer" unique_id=1867093133]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("4_u5sy4")
+
+[node name="BatteryIcon" type="AnimatedSprite2D" parent="CanvasLayer/BatteryHUD" unique_id=1062403674]
+position = Vector2(73, 37)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_trtic")
+animation = &"new_animation"
+frame_progress = 0.35689703
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/BatteryHUD" unique_id=731397886]
+position = Vector2(70, 69)
+scale = Vector2(0.14439332, 0.14439332)
+texture = ExtResource("12_dinhu")
