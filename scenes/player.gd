@@ -4,6 +4,7 @@ extends CharacterBody2D
 @onready var flashlight_pivot = $FlashLightPivot
 @onready var ray_light = $FlashLightPivot/RayLight
 @onready var halo_light = $HaloLight
+@onready var light_indicator = $"../CanvasLayer/BatteryHUD/LightIndicator"
 
 const SPEED = 200.0
 
@@ -13,7 +14,7 @@ const BATTERY_MOVE_DRAIN = 1.5
 const RAY_SCALE_MIN = 1.8
 const RAY_SCALE_MAX = 3.0
 const RAY_ENERGY_MIN = 0.2
-const RAY_ENERGY_MAX = 1.0
+const RAY_ENERGY_MAX = 3.0
 
 var flashlight_enabled = true
 
@@ -26,9 +27,11 @@ func _process(delta):
 
 	if flashlight_enabled:
 		ray_light.visible = true
+		light_indicator.visible = true
 		update_lights()
 	else:
 		ray_light.visible = false
+		light_indicator.visible = false
 		halo_light.visible = true
 		halo_light.energy = 0.35
 

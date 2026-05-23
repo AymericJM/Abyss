@@ -160,7 +160,7 @@ position = Vector2(-5, 2518)
 position = Vector2(331, -164)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=495194698]
-color = Color(0.03137255, 0.07450981, 0.10980392, 1)
+color = Color(0.19804764, 0.3237002, 0.41966823, 1)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2090077843]
 
@@ -178,12 +178,10 @@ sprite_frames = SubResource("SpriteFrames_trtic")
 animation = &"new_animation"
 frame_progress = 0.35689703
 
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/BatteryHUD" unique_id=731397886]
-position = Vector2(70, 69)
-scale = Vector2(0.14439332, 0.14439332)
+[node name="LightIndicator" type="Sprite2D" parent="CanvasLayer/BatteryHUD" unique_id=146665687]
+position = Vector2(73.99999, 65.99999)
+scale = Vector2(0.1635184, 0.1635184)
 texture = ExtResource("12_dinhu")
-visible = false
-color = Color(0.10338759, 0.099523984, 0.09362256, 1)
 
 [node name="Walls" type="StaticBody2D" parent="." unique_id=1199168450]
 
