@@ -4,6 +4,9 @@ var current_battery = 100.0
 const MAX_BATTERY = 100.0
 
 func _ready():
+	Events.charge_battery.connect(func():
+		current_battery = 100.0
+		)
 	reset()
 
 func reset():

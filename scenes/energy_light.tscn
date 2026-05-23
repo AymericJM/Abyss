@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dfltbvmgbuvil"]
+
+[ext_resource type="Script" uid="uid://c0rm77w3v5g8o" path="res://scripts/energy_light.gd" id="1_iekof"]
+[ext_resource type="Texture2D" uid="uid://d1c5p3qffyud5" path="res://assets/128x128 textures (43).png" id="1_ob48v"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0mri0"]
+radius = 188.01064
+
+[node name="Energy_light" type="Node2D" unique_id=130930174]
+script = ExtResource("1_iekof")
+
+[node name="ChargeZone" type="Area2D" parent="." unique_id=1573927157]
+
+[node name="ChargeCollision" type="CollisionShape2D" parent="ChargeZone" unique_id=1629862644]
+shape = SubResource("CircleShape2D_0mri0")
+
+[node name="Halo" type="PointLight2D" parent="." unique_id=1189491324]
+texture = ExtResource("1_ob48v")
+texture_scale = 3.0
+
+[connection signal="body_entered" from="ChargeZone" to="." method="_on_charge_zone_body_entered"]

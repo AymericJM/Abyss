@@ -22,14 +22,15 @@
 [ext_resource type="Texture2D" uid="uid://dsh8be6gvs5y3" path="res://assets/midground(1).png" id="10_5newe"]
 [ext_resource type="Script" uid="uid://dbkudlqe747i5" path="res://scripts/FinalScene.gd" id="12_bt5mj"]
 [ext_resource type="Texture2D" uid="uid://c73slv4l3d2wh" path="res://assets/flashlight/flashlight_uid.png" id="12_dinhu"]
-[ext_resource type="Texture2D" uid="uid://cnf3y62spaf3l" path="res://assets/grain.jpg" id="22_bt5mj"]
-[ext_resource type="Script" uid="uid://w0moih1y8t60" path="res://scripts/grain.gd" id="23_e1j6l"]
-[ext_resource type="AudioStream" uid="uid://dwdgk5u81iucn" path="res://assets/audio/tension.mp3" id="24_e1j6l"]
 [ext_resource type="Texture2D" uid="uid://cuetv7d2genki" path="res://assets/cthulhu-moonworld-icon.png" id="13_e1j6l"]
 [ext_resource type="PackedScene" uid="uid://b5tllwld7rudv" path="res://scenes/enemies/fish_light_attracted.tscn" id="13_fish"]
 [ext_resource type="AudioStream" uid="uid://bguqqy7qlti5i" path="res://assets/audio/473601__czghost__war_horn.wav" id="14_e1j6l"]
 [ext_resource type="Script" uid="uid://cgern7k440px2" path="res://scripts/KrakenMovement.gd" id="16_qnb83"]
 [ext_resource type="Texture2D" uid="uid://y6mio3ke25m0" path="res://assets/kraken.png" id="17_sww3w"]
+[ext_resource type="PackedScene" uid="uid://dfltbvmgbuvil" path="res://scenes/energy_light.tscn" id="19_wljb1"]
+[ext_resource type="Texture2D" uid="uid://cnf3y62spaf3l" path="res://assets/grain.jpg" id="22_bt5mj"]
+[ext_resource type="Script" uid="uid://w0moih1y8t60" path="res://scripts/grain.gd" id="23_e1j6l"]
+[ext_resource type="AudioStream" uid="uid://dwdgk5u81iucn" path="res://assets/audio/tension.mp3" id="24_e1j6l"]
 
 [sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_music"]
 stream_count = 3
@@ -239,6 +240,12 @@ anchor_mode = 0
 position_smoothing_enabled = true
 position_smoothing_speed = 7.0
 script = ExtResource("2_yqjtg")
+
+[node name="Energy_light" parent="." unique_id=130930174 instance=ExtResource("19_wljb1")]
+position = Vector2(1975, 1565)
+
+[node name="Energy_light2" parent="." unique_id=701055337 instance=ExtResource("19_wljb1")]
+position = Vector2(-547, 1352)
 
 [node name="Level0" parent="." unique_id=1771754707 instance=ExtResource("3_lnu2h")]
 position = Vector2(0, -360)
