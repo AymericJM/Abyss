@@ -1,13 +1,13 @@
 extends CharacterBody2D
+class_name Player
 
 @onready var sprite = $AnimatedSprite2D
 @onready var flashlight_pivot = $FlashLightPivot
 @onready var ray_light = $FlashLightPivot/RayLight
 @onready var halo_light = $HaloLight
-@onready var light_indicator = $"../CanvasLayer/BatteryHUD/LightIndicator"
+@onready var light_indicator = get_node_or_null("../CanvasLayer/BatteryHUD/LightIndicator")
 
 const SPEED = 200.0
-
 const BATTERY_IDLE_DRAIN = 0.8
 const BATTERY_MOVE_DRAIN = 1.5
 
@@ -27,23 +27,23 @@ func _process(delta):
 
 	if flashlight_enabled:
 		ray_light.visible = true
-		light_indicator.visible = true
+		if light_indicator:
+			light_indicator.visible = true
 		update_lights()
 	else:
 		ray_light.visible = false
-		light_indicator.visible = false
+		if light_indicator:
+			light_indicator.visible = false
 		halo_light.visible = true
 		halo_light.energy = 0.35
 
 func update_lights():
 	var ratio = BatteryManager.get_ratio()
-
 	var ray_scale = lerp(RAY_SCALE_MIN, RAY_SCALE_MAX, ratio)
 
 	ray_light.scale = Vector2.ONE
 	ray_light.texture_scale = ray_scale
 	ray_light.energy = lerp(RAY_ENERGY_MIN, RAY_ENERGY_MAX, ratio)
-	ray_light.blend_mode = 2
 
 	if ray_light.texture:
 		ray_light.offset = Vector2((ray_light.texture.get_width() * ray_scale) / 2.085, 0)
@@ -52,15 +52,9 @@ func update_lights():
 	halo_light.texture_scale = lerp(1.8, 2.8, ratio)
 
 func _physics_process(delta):
-	var direction = Input.get_vector(
-		"move_left",
-		"move_right",
-		"move_up",
-		"move_down"
-	)
+	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 
 	var drain = BATTERY_IDLE_DRAIN
-
 	if direction.length() > 0:
 		drain += BATTERY_MOVE_DRAIN
 
