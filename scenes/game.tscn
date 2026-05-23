@@ -6,6 +6,45 @@
 [ext_resource type="Texture2D" uid="uid://dyusa455a5myl" path="res://assets/boatDestroyed.png" id="3_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://8etoonjjrxec" path="res://scenes/level.tscn" id="3_lnu2h"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iywne"]
+size = Vector2(1287, 791)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p57ef"]
+size = Vector2(717, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u5sy4"]
+size = Vector2(754, 556)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gee14"]
+size = Vector2(954.5, 418.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0tnpc"]
+size = Vector2(634, 750)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vtaks"]
+size = Vector2(1269, 358)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kvpfn"]
+size = Vector2(650, 1430)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dinhu"]
+size = Vector2(1300, 377)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kvuet"]
+size = Vector2(304, 730)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_trtic"]
+size = Vector2(643.5, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ir15t"]
+size = Vector2(1933, 747)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ca42v"]
+size = Vector2(426.5, 1073.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rysoc"]
+size = Vector2(636, 390)
+
 [node name="game" type="Node2D" unique_id=977194021]
 script = ExtResource("1_iywne")
 
@@ -80,3 +119,57 @@ position = Vector2(331, -164)
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=495194698]
 visible = false
 color = Color(0.10338759, 0.099523984, 0.09362256, 1)
+
+[node name="Walls" type="StaticBody2D" parent="." unique_id=1199168450]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls" unique_id=1087867823]
+position = Vector2(-635, -29)
+shape = SubResource("RectangleShape2D_iywne")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls" unique_id=683029999]
+position = Vector2(349, -182)
+shape = SubResource("RectangleShape2D_p57ef")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Walls" unique_id=64481110]
+position = Vector2(1012, 85)
+shape = SubResource("RectangleShape2D_u5sy4")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Walls" unique_id=1476348767]
+position = Vector2(-1749, 559)
+shape = SubResource("RectangleShape2D_gee14")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Walls" unique_id=1000739212]
+position = Vector2(-959, 1094)
+shape = SubResource("RectangleShape2D_0tnpc")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Walls" unique_id=1314169749]
+position = Vector2(632.5, 900)
+shape = SubResource("RectangleShape2D_vtaks")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Walls" unique_id=739881617]
+position = Vector2(1594, 1082)
+shape = SubResource("RectangleShape2D_kvpfn")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Walls" unique_id=1164201649]
+position = Vector2(-6, 1620.5)
+shape = SubResource("RectangleShape2D_dinhu")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Walls" unique_id=268853582]
+position = Vector2(2712, 1796)
+shape = SubResource("RectangleShape2D_kvuet")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Walls" unique_id=748372575]
+position = Vector2(2241.25, 1431)
+shape = SubResource("RectangleShape2D_trtic")
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Walls" unique_id=1515745170]
+position = Vector2(1604, 2536)
+shape = SubResource("RectangleShape2D_ir15t")
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="Walls" unique_id=1673199298]
+position = Vector2(-211, 2354.25)
+shape = SubResource("RectangleShape2D_ca42v")
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="Walls" unique_id=1872892693]
+position = Vector2(317, 3075)
+shape = SubResource("RectangleShape2D_rysoc")
