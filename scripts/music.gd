@@ -1,7 +1,7 @@
 extends AudioStreamPlayer
 
 @export var player: CharacterBody2D
-@export var full_volumes: Array[float] = [-25.0, -30.0, -10.0]
+@export var full_volumes: Array[float] = [-15.0, -20.0, 0.0]
 
 const ZERO_VOLUME: float = -60.0
 const FADE_HALF_WIDTH: float = 180.0
