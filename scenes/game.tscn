@@ -1,3 +1,31 @@
+[gd_scene format=3 uid="uid://b6brkixw5apst"]
+
+[ext_resource type="Script" uid="uid://bng1x68xv3kpw" path="res://scripts/game.gd" id="1_tbuau"]
+[ext_resource type="AudioStream" uid="uid://bxhlg2ac6lwxf" path="res://assets/audio/music_surface.mp3" id="2_i6t6v"]
+[ext_resource type="AudioStream" uid="uid://bdvsc7qo4pjh4" path="res://assets/audio/music_underwater.mp3" id="3_2dyrp"]
+[ext_resource type="Script" uid="uid://2spwkrcku5c7" path="res://scripts/music.gd" id="4_efpq0"]
+[ext_resource type="AudioStream" uid="uid://cfy18bef6vecr" path="res://assets/audio/music_deep.mp3" id="4_gee14"]
+[ext_resource type="Script" uid="uid://drrdlk5lce5aj" path="res://scripts/camera.gd" id="5_8lmkp"]
+[ext_resource type="PackedScene" uid="uid://8etoonjjrxec" path="res://scenes/level.tscn" id="6_jmf2r"]
+[ext_resource type="PackedScene" uid="uid://xwcakq0n3tcq" path="res://scenes/player.tscn" id="7_pdte6"]
+
+[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_p57ef"]
+stream_count = 3
+stream_0/stream = ExtResource("2_i6t6v")
+stream_0/volume = 0.0
+stream_1/stream = ExtResource("3_2dyrp")
+stream_1/volume = 0.0
+stream_2/stream = ExtResource("4_gee14")
+stream_2/volume = 0.0
+
+[node name="game" type="Node2D" unique_id=977194021]
+script = ExtResource("1_tbuau")
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=434094903 node_paths=PackedStringArray("player")]
+stream = SubResource("AudioStreamSynchronized_p57ef")
+script = ExtResource("4_efpq0")
+player = NodePath("../Player")
+
 [gd_scene format=3 uid="uid://cram3ui07hec7"]
 
 [ext_resource type="Script" uid="uid://bssdbwtjyax0b" path="res://scripts/game.gd" id="1_iywne"]
@@ -95,7 +123,7 @@ script = ExtResource("1_iywne")
 anchor_mode = 0
 position_smoothing_enabled = true
 position_smoothing_speed = 7.0
-script = ExtResource("2_yqjtg")
+script = ExtResource("5_8lmkp")
 
 [node name="Level0" parent="." unique_id=1771754707 instance=ExtResource("3_lnu2h")]
 position = Vector2(0, -356)

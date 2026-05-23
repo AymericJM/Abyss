@@ -1,6 +1,7 @@
 extends Node2D
-
+	
 func _ready():
+  $Music.play()
 	print("Game ready - Assigning floor depths...")
 	assign_floor_depths()
 
