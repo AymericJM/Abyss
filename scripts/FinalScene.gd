@@ -17,3 +17,6 @@ func _on_body_entered(body):
 		
 		var tween = create_tween()
 		tween.tween_property(sprite, "modulate:a", 1.0, fade_duration)
+		
+		await get_tree().create_timer(10.0).timeout
+		get_tree().quit()

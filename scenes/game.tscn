@@ -23,8 +23,8 @@
 [ext_resource type="Script" uid="uid://dbkudlqe747i5" path="res://scripts/FinalScene.gd" id="12_bt5mj"]
 [ext_resource type="Texture2D" uid="uid://c73slv4l3d2wh" path="res://assets/flashlight/flashlight_uid.png" id="12_dinhu"]
 [ext_resource type="Texture2D" uid="uid://cuetv7d2genki" path="res://assets/cthulhu-moonworld-icon.png" id="13_e1j6l"]
-[ext_resource type="AudioStream" uid="uid://bguqqy7qlti5i" path="res://assets/audio/473601__czghost__war_horn.wav" id="14_e1j6l"]
 [ext_resource type="PackedScene" uid="uid://b5tllwld7rudv" path="res://scenes/enemies/fish_light_attracted.tscn" id="13_fish"]
+[ext_resource type="AudioStream" uid="uid://bguqqy7qlti5i" path="res://assets/audio/473601__czghost__war_horn.wav" id="14_e1j6l"]
 
 [sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_music"]
 stream_count = 3
@@ -424,6 +424,7 @@ texture = ExtResource("13_e1j6l")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Area2D" unique_id=1785696584]
 stream = ExtResource("14_e1j6l")
+volume_db = 3.0
 
 [node name="Player" parent="." unique_id=1714594108 instance=ExtResource("1_uwrxv")]
 position = Vector2(322, -143)
@@ -643,4 +644,3 @@ shape = SubResource("CircleShape2D_gxtfn")
 position = Vector2(547, 2500)
 rotation = 1.5752041
 shape = SubResource("CapsuleShape2D_gxtfn")
-
