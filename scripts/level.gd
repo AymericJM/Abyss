@@ -16,7 +16,7 @@ func apply_darkness():
 	overlay.size = Vector2(640, 360)
 	overlay.position = Vector2(0, 0)
 
-	var alpha = floor_depth * 0.15
+	var alpha = floor_depth * 0.20
 	alpha = min(alpha, 0.9)
 
 	overlay.color.a = alpha
