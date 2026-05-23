@@ -241,12 +241,6 @@ position_smoothing_enabled = true
 position_smoothing_speed = 7.0
 script = ExtResource("2_yqjtg")
 
-[node name="Energy_light" parent="." unique_id=130930174 instance=ExtResource("19_wljb1")]
-position = Vector2(1975, 1565)
-
-[node name="Energy_light2" parent="." unique_id=701055337 instance=ExtResource("19_wljb1")]
-position = Vector2(-547, 1352)
-
 [node name="Level0" parent="." unique_id=1771754707 instance=ExtResource("3_lnu2h")]
 position = Vector2(0, -360)
 
@@ -424,6 +418,12 @@ scale = Vector2(2.2272727, 1.2198997)
 texture = ExtResource("9_264po")
 flip_h = true
 flip_v = true
+
+[node name="Energy_light" parent="." unique_id=130930174 instance=ExtResource("19_wljb1")]
+position = Vector2(2000, 1577)
+
+[node name="Energy_light2" parent="." unique_id=701055337 instance=ExtResource("19_wljb1")]
+position = Vector2(-1117, 473)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=636028831]
 position = Vector2(328.00003, 2699)
