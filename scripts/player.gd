@@ -23,10 +23,13 @@ var flashlight_enabled = true
 var is_dead = false
 var _flicker_tween: Tween = null
 var _lights_cut = false
+var _locked = false
+var _walk_target: Vector2 = Vector2.ZERO
+var _walking_to_center = false
 
 func _ready():
 	Events.penultimate_room_entered.connect(_start_flicker)
-	Events.final_room_entered.connect(_cut_lights)
+	Events.final_room_entered.connect(_enter_final_room)
 
 func _process(_delta):
 	if Input.is_action_just_pressed("flashlight_toggle"):
@@ -86,6 +89,25 @@ func _physics_process(delta):
 		move_and_slide()
 		return
 
+	if _walking_to_center:
+		var dir = (_walk_target - global_position)
+		if dir.length() < 4.0:
+			velocity = Vector2.ZERO
+			_walking_to_center = false
+			_locked = true
+			sprite.stop()
+		else:
+			velocity = dir.normalized() * SPEED
+			if not sprite.is_playing():
+				sprite.play()
+		move_and_slide()
+		return
+
+	if _locked:
+		velocity = Vector2.ZERO
+		move_and_slide()
+		return
+
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 
 	var drain = BATTERY_IDLE_DRAIN
@@ -129,6 +151,12 @@ func _cut_lights():
 	ray_light.visible = false
 	halo_light.visible = false
 	flashlight_enabled = false
+
+func _enter_final_room(room: Node2D):
+	_cut_lights()
+	_locked = false
+	_walking_to_center = true
+	_walk_target = room.global_position + Vector2(320, 180)
 
 func die():
 	if is_dead:

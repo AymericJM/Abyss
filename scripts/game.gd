@@ -7,6 +7,13 @@ func _ready():
 	create_death_overlay()
 	$Music.play()
 	assign_floor_depths()
+	Events.penultimate_room_entered.connect(_stop_all_audio)
+
+func _stop_all_audio():
+	$Music.stop()
+	var grain = get_node_or_null("CanvasLayer/Grain")
+	if grain and grain.has_node("Tension"):
+		grain.get_node("Tension").stop()
 
 func create_death_overlay():
 	death_overlay = ColorRect.new()

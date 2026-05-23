@@ -27,4 +27,4 @@ func _on_room_center_body_entered(body: Node2D) -> void:
 		if room_index == 16:
 			Events.penultimate_room_entered.emit()
 		elif room_index == 17:
-			Events.final_room_entered.emit()
+			Events.final_room_entered.emit(self)
