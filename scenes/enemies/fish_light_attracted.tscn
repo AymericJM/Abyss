@@ -42,9 +42,13 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_1"]
 radius = 14.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_fo2sl"]
+radius = 16.0
+
 [node name="FishLightAttracted" type="CharacterBody2D" unique_id=1557373553 groups=["enemy"]]
 script = ExtResource("1")
 speed = 60.0
+detection_range = 220.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1466401423]
 sprite_frames = SubResource("SpriteFrames_1")
@@ -52,3 +56,10 @@ animation = &"swim"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=411823402]
 shape = SubResource("CircleShape2D_1")
+
+[node name="KillZone" type="Area2D" parent="." unique_id=1620801823]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone" unique_id=222400994]
+shape = SubResource("CircleShape2D_fo2sl")
+
+[connection signal="body_entered" from="KillZone" to="." method="_on_kill_zone_body_entered"]

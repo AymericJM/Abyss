@@ -18,7 +18,7 @@ const RAY_ENERGY_MAX = 3.0
 
 var flashlight_enabled = true
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("flashlight_toggle"):
 		flashlight_enabled = !flashlight_enabled
 
@@ -69,3 +69,9 @@ func _physics_process(delta):
 			sprite.play()
 	else:
 		sprite.stop()
+
+func die():
+	var game = get_tree().current_scene
+
+	if game.has_method("player_die"):
+		game.player_die()

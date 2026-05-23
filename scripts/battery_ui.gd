@@ -2,7 +2,7 @@ extends Control
 
 @onready var icon = $BatteryIcon
 
-func _process(delta):
+func _process(_delta):
 	var battery = BatteryManager.current_battery
 
 	if battery <= 0:
