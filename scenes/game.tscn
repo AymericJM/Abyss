@@ -1,10 +1,13 @@
-[gd_scene format=3 uid="res://scenes/game.tscn"]
+[gd_scene format=3 uid="uid://cram3ui07hec7"]
 
+[ext_resource type="Script" uid="uid://bssdbwtjyax0b" path="res://scripts/game.gd" id="1_iywne"]
 [ext_resource type="PackedScene" uid="uid://xwcakq0n3tcq" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="Script" uid="uid://drrdlk5lce5aj" path="res://scripts/camera.gd" id="2_yqjtg"]
+[ext_resource type="Texture2D" uid="uid://dyusa455a5myl" path="res://assets/boatDestroyed.png" id="3_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://8etoonjjrxec" path="res://scenes/level.tscn" id="3_lnu2h"]
 
 [node name="game" type="Node2D" unique_id=977194021]
+script = ExtResource("1_iywne")
 
 [node name="Camera" type="Camera2D" parent="." unique_id=330781564]
 anchor_mode = 0
@@ -12,17 +15,68 @@ position_smoothing_enabled = true
 position_smoothing_speed = 7.0
 script = ExtResource("2_yqjtg")
 
-[node name="Level" parent="." unique_id=1771754707 instance=ExtResource("3_lnu2h")]
-position = Vector2(-47, 0)
+[node name="Level0" parent="." unique_id=1771754707 instance=ExtResource("3_lnu2h")]
+position = Vector2(0, -356)
 
-[node name="Level2" parent="." unique_id=11225025 instance=ExtResource("3_lnu2h")]
+[node name="Sprite2D2" type="Sprite2D" parent="Level0" unique_id=1441491743]
+position = Vector2(320, 178.5)
+scale = Vector2(1.1111112, 1.095679)
+texture = ExtResource("3_lbhrr")
+
+[node name="Level1" parent="." unique_id=882372607 instance=ExtResource("3_lnu2h")]
+position = Vector2(0, 3)
+
+[node name="Level2" parent="." unique_id=1381282914 instance=ExtResource("3_lnu2h")]
+position = Vector2(-1279, 359)
+
+[node name="Level3" parent="." unique_id=927367562 instance=ExtResource("3_lnu2h")]
+position = Vector2(-639, 359)
+
+[node name="Level4" parent="." unique_id=11225025 instance=ExtResource("3_lnu2h")]
 position = Vector2(0, 360)
 
-[node name="Level3" parent="." unique_id=1798858157 instance=ExtResource("3_lnu2h")]
-position = Vector2(640, 0)
+[node name="Level5" parent="." unique_id=1798858157 instance=ExtResource("3_lnu2h")]
+position = Vector2(638, 360)
+
+[node name="Level6" parent="." unique_id=653768208 instance=ExtResource("3_lnu2h")]
+position = Vector2(-640, 719)
+
+[node name="Level7" parent="." unique_id=204012614 instance=ExtResource("3_lnu2h")]
+position = Vector2(-641, 1079)
+
+[node name="Level8" parent="." unique_id=346645947 instance=ExtResource("3_lnu2h")]
+position = Vector2(-1, 1079)
+
+[node name="Level9" parent="." unique_id=542044416 instance=ExtResource("3_lnu2h")]
+position = Vector2(639, 1079)
+
+[node name="Level10" parent="." unique_id=471775802 instance=ExtResource("3_lnu2h")]
+position = Vector2(639, 1439)
+
+[node name="Level11" parent="." unique_id=541346397 instance=ExtResource("3_lnu2h")]
+position = Vector2(1917, 1439)
+
+[node name="Level12" parent="." unique_id=1369765899 instance=ExtResource("3_lnu2h")]
+position = Vector2(-1, 1799)
+
+[node name="Level13" parent="." unique_id=283713558 instance=ExtResource("3_lnu2h")]
+position = Vector2(639, 1799)
+
+[node name="Level14" parent="." unique_id=828077478 instance=ExtResource("3_lnu2h")]
+position = Vector2(1279, 1799)
+
+[node name="Level15" parent="." unique_id=1984275178 instance=ExtResource("3_lnu2h")]
+position = Vector2(1917, 1799)
+
+[node name="Level16" parent="." unique_id=1600989536 instance=ExtResource("3_lnu2h")]
+position = Vector2(-5, 2159)
+
+[node name="Level17" parent="." unique_id=860688650 instance=ExtResource("3_lnu2h")]
+position = Vector2(-5, 2518)
 
 [node name="Player" parent="." unique_id=1714594108 instance=ExtResource("1_uwrxv")]
-position = Vector2(519, 288)
+position = Vector2(331, -164)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=495194698]
-color = Color(0.08, 0.08, 0.08, 1)
+visible = false
+color = Color(0.10338759, 0.099523984, 0.09362256, 1)
