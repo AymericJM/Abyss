@@ -1,12 +1,12 @@
 extends AudioStreamPlayer
 
 @export var player: CharacterBody2D
-@export var full_volumes: Array[float] = [-15.0, -20.0, 0.0]
+@export var full_volumes: Array[float] = [-15.0, -20.0, -15.0]
 
 const ZERO_VOLUME: float = -60.0
 const FADE_HALF_WIDTH: float = 180.0
 
-var transition_points: Array[float] = [1080.0, 1800.0]
+var transition_points: Array[float] = [720.0, 1440.0]
 
 func _process(_delta: float) -> void:
 	var py := player.global_position.y
